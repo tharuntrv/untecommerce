@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background-color: #0c0d0e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      background-color: #0056b3;
+      padding: 10px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    .menu a:hover {
+      background-color: #003e82;
+    }
+
+    .content {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .book-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 45%;
+      margin: 10px;
+    }
+
+    .book-title {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .book-author {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .book-description {
+      margin: 10px 0;
+    }
+
+    .book-price {
+      color: #0056b3;
+      font-size: 1.1em;
+    }
+
+    .order-button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .order-button:hover {
+      background-color: #003e82;
+    }
+
+    .order-section {
+      text-align: center;
+    }
+
+    .order-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .remove-button {
+      background-color: #ff5555;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .remove-button:hover {
+      background-color: #cc0000;
+    }
+
+    .order-total {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    .purchase-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .purchase-button:hover {
+      background-color: #45a049;
+    }
+
+    .footing {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-section {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .footer-section div {
+      flex: 1;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-us {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contact-form {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .contact-form label,
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .payment-form {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .payment-form label,
+    .payment-form input,
+    .payment-form select,
+    .payment-form button {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Script and Imagination Bookstore</h1>
+  </div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="catalog.php">Catalog</a>
+    <a href="logout.html">Logout</a>
+  </div>
+  <div class="content">
+  <div class="book-container">
+      <img src="/images/book1.jpeg" alt="Introduction to Programming">
+      <div class="book-title">Introduction to Programming</div>
+      <div class="book-author">Author: BILL GATES</div>
+      <div class="book-description">A comprehensive smart guide for beginners in programming. Covers fundamental concepts and coding practices.</div>
+      <div class="book-price">$19.99</div>
+      <button class="order-button" data-item="Introduction to Programming" data-price="19.99">Order</button>
+    </div>
+
+    <div class="book-container">
+      <img src="images/book2.jpeg" alt="Mystery Novel">
+      <div class="book-title">Mystery Novel</div>
+      <div class="book-author">Author: AGATHA CHRISTIE</div>
+      <div class="book-description">A gripping mystery novel with unexpected twists and turns. Perfect for lovers of suspense.</div>
+      <div class="book-price">$14.99</div>
+      <button class="order-button" data-item="Mystery Novel" data-price="14.99">Order</button>
+    </div>
+
+    <div class="book-container">
+      <img src="images/book3.jpeg" alt="Biography: Steve Jobs">
+      <div class="book-title">Biography: Steve Jobs</div>
+      <div class="book-author">Author: WALTER ISAACSON</div>
+      <div class="book-description">Discover the life and achievements of the visionary entrepreneur, Steve Jobs.</div>
+      <div class="book-price">$22.99</div>
+      <button class="order-button" data-item="Biography: Steve Jobs" data-price="22.99">Order</button>
+    </div>
+
+    <div class="book-container">
+      <img src="images/book4.jpeg" alt="Fantasy Novel">
+      <div class="book-title">Fantasy Novel</div>
+      <div class="book-author">Author: J.K. ROWLING</div>
+      <div class="book-description">Immerse yourself in a magical world filled with wizards, witches, and mythical creatures.</div>
+      <div class="book-price">$16.99</div>
+      <button class="order-button" data-item="Fantasy Novel" data-price="16.99">Order</button>
+    </div>
+  </div>
+ 
+
+  <div class="order-section">
+    <h2>Your Orders</h2>
+    <ul class="order-list">
+      <!-- Selected items will be added here dynamically -->
+    </ul>
+    <div class="order-total">Total: $<span id="total-amount">0.00</span></div>
+  </div>
+
+  <div class="purchase-button" onclick="showPaymentForm()">Purchase</div>
+
+  <!-- Payment form -->
+  <div class="payment-form" style="display: none;">
+    <h2>Payment Information</h2>
+    <form id="payment-form">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" placeholder="Enter your card number" required>
+      <label for="expiration-date">Expiration Date:</label>
+<select id="expiration-month" required>
+  <option value="01">January</option>
+  <option value="02">February</option>
+  <option value="03">March</option>
+  <option value="04">April</option>
+  <option value="05">May</option>
+  <option value="06">June</option>
+  <option value="07">July</option>
+  <option value="08">August</option>
+  <option value="09">September</option>
+  <option value="10">October</option>
+  <option value="11">November</option>
+  <option value="12">December</option>
+</select>
+
+        
+      <select id="expiration-year" required>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+       
+      </select>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" placeholder="Enter CVV" required>
+
+      <button type="button" onclick="processPayment()">Pay Now</button>
+    </form>
+  </div>
+
+  <footer class="footing">
+    <div class="footer-section">
+      <div>
+        <h3>Contact Information</h3>
+        <p>Script and Imagination Bookstore</p>
+        <p>123 Book Street, Cityville</p>
+        <p>Email: info@scriptandimagination.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="catalog.php">Home</a></p>
+        <p><a href="contact_us.html">Contact Us</a></p>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://x.com/TARUNREDDYBOKKA?t=JXyT7GcvVNqYJCFXdiP4hg&s=09" target="_blank">Twitter</a>
+    </div>
+
+    <p>&copy; 2023 Script and Imagination Bookstore</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const orderButtons = document.querySelectorAll('.order-button');
+      const orderList = document.querySelector('.order-list');
+      const totalAmount = document.getElementById('total-amount');
+
+      let selectedItems = [];
+      let total = 0.0;
+
+      orderButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const item = button.getAttribute('data-item');
+          const price = parseFloat(button.getAttribute('data-price'));
+
+          if (!selectedItems.includes(item)) {
+            selectedItems.push(item);
+            total += price;
+
+            const listItem = document.createElement('li');
+            const listItemText = `${item} - $${price.toFixed(2)}`;
+
+            listItem.textContent = listItemText;
+
+            const removeButton = document.createElement('button');
+            removeButton.classList.add('remove-button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', function () {
+              const index = selectedItems.indexOf(item);
+              if (index !== -1) {
+                selectedItems.splice(index, 1);
+                total -= price;
+                orderList.removeChild(listItem);
+                totalAmount.textContent = total.toFixed(2);
+              }
+            });
+
+            listItem.appendChild(removeButton);
+            orderList.appendChild(listItem);
+            totalAmount.textContent = total.toFixed(2);
+          }
+        });
+      });
+    });
+
+    function showPaymentForm() {
+      const paymentForm = document.querySelector('.payment-form');
+      paymentForm.style.display = 'block';
+    }
+
+    function processPayment() {
+
+      alert('Payment processed successfully!');
+    
+    }
+  </script>
+
+</body>
+
+</html>

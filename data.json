@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Classic",
+        "language": "English",
+        "price": 15.99,
+        "quantity": 10
+    },
+    {
+        "id": 2,
+        "title": "One Hundred Years of Solitude",
+        "author": "Gabriel García Márquez",
+        "genre": "Magical Realism",
+        "language": "Spanish",
+        "price": 20.50,
+        "quantity": 5
+    },
+    {
+        "id": 3,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genre": "Fiction",
+        "language": "English",
+        "price": 12.75,
+        "quantity": 8
+    }
+
+]

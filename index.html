@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script and Imagination Bookstore</title>
+
+    <style>
+       body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0c0d0e;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .slider-container {
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slider-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .slider-navigation button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slider-navigation button:hover {
+            background-color: #0056b3;
+        }
+
+        .footing {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .footer-section div {
+            flex: 1;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-us {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .contact-form label,
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Script and Imagination Bookstore</h1>
+    </header>
+
+    <div class="container">
+        <h2>Welcome to Script and Imagination Bookstore</h2>
+        <p>Explore our vast collection of books and enjoy a seamless shopping experience.</p>
+        <p>Not a member yet? <a href="register.">Register now</a> to unlock exclusive benefits!</p>
+        <p>Already a member? <a href="login.html" style="color: #007BFF;">Login</a> to browse and shop.</p>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider">
+            <img src="slider1.png" alt="Image 1">
+            <img src="slider2.png" alt="Image 2">
+            <img src="slider3.png" alt="Image 3">
+            <img src="slider4.png" alt="Image 4">
+        </div>
+
+        <div class="slider-navigation">
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <footer class="footing">
+        <div class="footer-section">
+            <div>
+                <h3>Contact Information</h3>
+                <p>Script and Imagination Bookstore</p>
+                <p>123 Book Street, Cityville</p>
+                <p>Email: info@scriptandimagination.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="login.html">Login</a></p>
+                <p><a href="contact_us.html">Contact Us</a></p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://x.com/TARUNREDDYBOKKA?t=JXyT7GcvVNqYJCFXdiP4hg&s=09" target="_blank">Twitter</a>
+        </div>
+
+        <p>&copy; 2023 Script and Imagination Bookstore</p>
+    </footer>
+
+    <button class="contact-us" onclick="toggleContactForm()">Contact Us</button>
+
+    <div class="contact-form" id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        let count = 0;
+
+        function nextSlide() {
+            count++;
+            if (count > 3) {
+                count = 0;
+            }
+            updateSlide();
+        }
+
+        function prevSlide() {
+            count--;
+            if (count < 0) {
+                count = 3;
+            }
+            updateSlide();
+        }
+
+        function updateSlide() {
+            const translateValue = -count * 100 + '%';
+            slider.style.transform = 'translateX(' + translateValue + ')';
+        }
+
+        // Automatically move to the next slide every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        function toggleContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            contactForm.style.display = contactForm.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function submitForm() {
+            alert("Form submitted!");
+        }
+    </script>
+</body>
+</html>
