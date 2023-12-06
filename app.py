@@ -95,14 +95,14 @@ def generate_and_send_otp(email):
     OTP = random.randint(100000, 999999)
 
     body = f"Dear {email},\n\nYour OTP is {OTP}."
-    subject = "OTP verification from Ecommerce"
+    subject = "OTP verification from UNT Ecommerce Webmaster"
     message = f'subject:{subject}\n\n{body}'
 
     # Add your email and password for SMTP login
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("", "sruq ywfg caqh sbvz")
-    server.sendmail("", email, message)
+    server.login("untecommercewebmaster@gmail.com", "ddsj ncmq cdzx pxyk")
+    server.sendmail("untecommercewebmaster@gmail.com", email, message)
     server.quit()
 
     return OTP
