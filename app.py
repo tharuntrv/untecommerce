@@ -1,4 +1,5 @@
 from flask import Flask, send_from_directory, request, redirect, url_for, flash
+from werkzeug.urls import url_quote
 import random
 import smtplib
 import json
