@@ -170,5 +170,6 @@ def save_user_credentials(username, email, password):
     with open('credentials.json', 'w') as file:
         json.dump(credentials, file)
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
