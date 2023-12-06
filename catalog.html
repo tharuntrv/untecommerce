@@ -202,7 +202,7 @@
   </div>
   <div class="menu">
     <a href="index.html">Home</a>
-    <a href="catalog.php">Catalog</a>
+    <a href="catalog.html">Catalog</a>
     <a href="logout.html">Logout</a>
   </div>
   <div class="content">
@@ -306,7 +306,7 @@
 
       <div>
         <h3>Quick Links</h3>
-        <p><a href="catalog.php">Home</a></p>
+        <p><a href="catalog.html">Home</a></p>
         <p><a href="contact_us.html">Contact Us</a></p>
       </div>
     </div>
@@ -368,10 +368,20 @@
     }
 
     function processPayment() {
+  // Get input values
+  const cardNumber = document.getElementById('card-number').value;
+  const expirationMonth = document.getElementById('expiration-month').value;
+  const expirationYear = document.getElementById('expiration-year').value;
+  const cvv = document.getElementById('cvv').value;
 
-      alert('Payment processed successfully!');
-    
-    }
+  // Basic input validation
+  if (!cardNumber || !expirationMonth || !expirationYear || !cvv) {
+    alert('Please fill in all payment details.');
+    return;
+  }
+  // If all inputs are filled, proceed with payment processing
+  alert('Payment processed successfully!');
+}
   </script>
 
 </body>
