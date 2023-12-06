@@ -171,4 +171,4 @@ def save_user_credentials(username, email, password):
         json.dump(credentials, file)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
