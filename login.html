@@ -5,15 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
         }
 
         .login-container {
@@ -23,6 +44,7 @@
             padding: 20px;
             width: 300px;
             text-align: center;
+            margin-top: 20px;
         }
 
         h2 {
@@ -56,9 +78,44 @@
             background-color: #45a049;
         }
 
-        .signup-link {
+        .login-link {
             margin-top: 10px;
             color: #4caf50;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        .footing {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Darker blue color on hover */
+        }
+
+        .signup-link {
+            margin-top: 10px;
+            color: #3498db; /* Blue color */
             text-decoration: none;
             display: inline-block;
         }
@@ -66,9 +123,93 @@
         .signup-link:hover {
             text-decoration: underline;
         }
+
+        /* Stylish Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footing {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-section div {
+            margin-right: 20px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .social-icons a:hover {
+            background-color: #45a049;
+        }
+
+        .contact-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
+    
+<header>
+    <h1>Welcome to Script and Imagination Bookstore</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="contact_us.html">Contact Us</a>
+</nav>
     <div class="login-container">
         <h2>Login</h2>
         <form action="/login" method="post">
@@ -79,5 +220,41 @@
         </form>
         <p class="signup-link">Don't have an account? <a href="/register">Sign up</a></p>
     </div>
+
+    <!-- Placeholder for contact form -->
+    <div class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+    </div>
+
+    <!-- Stylish Footer -->
+    <footer class="footing">
+        <div class="footer-section">
+            <div>
+                <h3>Contact Information</h3>
+                <p>Script and Imagination Bookstore</p>
+                <p>123 Book Street, Cityville</p>
+                <p>Email: info@scriptandimagination.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="login.html">Login</a></p>
+                <p><a href="contact_us.html">Contact Us</a></p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://x.com/TARUNREDDYBOKKA?t=JXyT7GcvVNqYJCFXdiP4hg&s=09" target="_blank">Twitter</a>
+        </div>
+
+        <p>&copy; 2023 Script and Imagination Bookstore</p>
+    </footer>
 </body>
 </html>
