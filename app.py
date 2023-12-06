@@ -80,7 +80,7 @@ def register():
         # Save user info for OTP verification
         save_user_info(email, OTP)
 
-        # Save user credentials (you might want to hash the password in a real application)
+        # Save user credentials
         save_user_credentials(username, email, password)
 
         return redirect(url_for('verify_otp', email=email))
@@ -101,8 +101,8 @@ def generate_and_send_otp(email):
     # Add your email and password for SMTP login
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("josephmakaumunyao40@gmail.com", "sruq ywfg caqh sbvz")
-    server.sendmail("josephmakaumunyao40@gmail.com", email, message)
+    server.login("", "sruq ywfg caqh sbvz")
+    server.sendmail("", email, message)
     server.quit()
 
     return OTP
