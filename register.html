@@ -11,9 +11,30 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
         }
 
         .register-container {
@@ -23,6 +44,7 @@
             padding: 20px;
             width: 300px;
             text-align: center;
+            margin-top: 20px;
         }
 
         h2 {
@@ -66,9 +88,38 @@
         .login-link:hover {
             text-decoration: underline;
         }
+
+        .footing {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Welcome to Script and Imagination Bookstore</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="contact_us.html">Contact Us</a>
+    </nav>
+
     <div class="register-container">
         <h2>Register</h2>
         <form action="/register" method="post">
@@ -85,5 +136,29 @@
         </form>
         <p class="login-link">Already have an account? <a href="/login">Login</a></p>
     </div>
+
+    <footer class="footing">
+        <div class="footer-section">
+            <div>
+                <h3>Contact Information</h3>
+                <p>Script and Imagination Bookstore</p>
+                <p>123 Book Street, Cityville</p>
+                <p>Email: info@scriptandimagination.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="login.html">Login</a></p>
+                <p><a href="contact_us.html">Contact Us</a></p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://x.com/TARUNREDDYBOKKA?t=JXyT7GcvVNqYJCFXdiP4hg&s=09" target="_blank">Twitter</a>
+        </div>
+
+        <p>&copy; 2023 Script and Imagination Bookstore</p>
+    </footer>
 </body>
 </html>
